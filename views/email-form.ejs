@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Email Form</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+
+        /* Form container (optional) */
+        .form-container {
+            display: flex; /* Add flexbox for centering */
+            justify-content: center; /* Horizontally center the form */
+        }
+
+        /* Form styles */
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 0 auto; /* Remove or adjust if using .form-container */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f5f5f5; /* Light gray background */
+        }
+
+        /* Title styles (optional) */
+        h1 {
+            text-align: center; /* Center the title text */
+            margin-bottom: 20px;
+        }
+
+        .email-form label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .email-form input[type="text"],
+        .email-form input[type="email"],
+        .email-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .email-form textarea {
+            min-height: 100px;
+        }
+
+        .email-form input[type="file"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .email-form button[type="submit"] {
+            background-color: #007bff; /* Blue background */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out; /* Add hover effect */
+        }
+
+        .email-form button[type="submit"]:hover {
+            background-color: #0062cc; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+<h1>Send an Email</h1>
+<div class="form-container">
+    <form action="/send-email" method="post" enctype="multipart/form-data" class="email-form">
+        <label for="to">To:</label>
+        <input type="email" id="to" name="to" required> <br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required> <br>
+
+        <label for="body">Body:</label>
+        <textarea id="body" name="text" required></textarea> <br>
+
+        <label for="attachment">Attachment (Optional):</label>
+        <input type="file" id="attachment" name="attachment"> <br>
+
+        <button type="submit">Send Email</button>
+    </form>
+</div>
+<script>
+	// Optional: Add JavaScript functionality here (e.g., form validation)
+</script>
+</body>
+</html>
